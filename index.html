@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-title" content="Clicker" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Clicker</title>
+    <style>
+      body {
+        background-color: rgb(6, 22, 12);
+      }
+      button {
+        padding: 1%;
+        margin: 1%;
+        align-items: center;
+        border: #dfd7d7;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+        color: #ffffff;
+        font-family: Phantomsans, sans-serif;
+        font-size: 20px;
+        justify-content: center;
+        line-height: 1em;
+        text-decoration: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        cursor: pointer;
+        display:block;
+        width: 98%;
+      }
+
+      .button1 {
+        
+        height: 420px;
+        background-image: linear-gradient(
+          144deg,
+          #2cbe64,
+          #054213 50%,
+          #4ed133
+        );
+      }
+
+      .button2 {
+        
+        height: 420px;
+        background-image: linear-gradient(
+          144deg,
+          #310c4b,
+          #101110 50%,
+          #0f4d50
+        );    
+      }
+      .button3 {
+        
+        height: 100px;
+        background-image: linear-gradient(
+          144deg,
+          #690d06,
+          #7e0707 50%,
+          #0f4d50
+        );    
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="click" class="button1" onclick="Clicker()" autofocus>
+        Click
+      </button>
+      <button id="minus" class="button3" onclick="Minus()" autofocus>
+        —
+      </button>
+      <button class="button2" onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+      let i = 0;
+      let result = document.getElementById("click");
+      let audio = document.getElementById("audio1");
+      function Clicker() {
+        i++;
+        result.textContent = i;
+      }
+      function Minus() {
+        i--;
+        result.textContent--;
+      }
+      function reset() {
+        result.textContent = 0;
+        result.focus();
+        i = 0;
+      }
+    </script>
+  </body>
+</html>
